@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Jul 29 19:28:18 ICT 2019
+hibernate-c3p0-4.3.8.Final.jar>central=
+hibernate-c3p0-4.3.8.Final-sources.jar>central=
+hibernate-c3p0-4.3.8.Final.pom>central=

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//LOGGER" "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+   <appender name="file" class="org.apache.log4j.RollingFileAppender">
+      <param name="File" value="bankplus.log"/>
+      <param name="Append" value="true"/>
+      <param name="Threshold" value="DEBUG" />
+	  <param name="MaxFileSize" value="5MB"/>
+      <param name="MaxBackupIndex" value="10"/>
+      <layout class="org.apache.log4j.PatternLayout">
+      	 <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+      </layout>
+   </appender>
+   
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+	
+	<!-- 3rdparty Loggers -->
+	
+	<logger name="com.wse">
+		<level value="DEBUG" />
+	</logger>
+	
+	<logger name="log4j.logger.javax.faces">
+		<level value="DEBUG" />
+	</logger>
+	
+	<logger name="log4j.logger.com.sun.faces">
+		<level value="DEBUG" />
+	</logger>
+	
+	<logger name="org.springframework.security">
+		<level value="warn" />
+	</logger>
+	<logger name="org.apache.commons">
+		<level value="warn" />
+	</logger>
+	<logger name="org.springframework">
+		<level value="warn" />
+	</logger>
+	<logger name="org.springframework.beans.factory.support">
+		<level value="warn" />
+	</logger>
+	
+	<logger name="org.hibernate.SQL">
+		<level value="DEBUG" />
+	</logger>
+	
+	<logger name="*">
+		<level value="info" />
+	</logger>
+	
+	<!-- Root Logger -->
+	<root>
+ 		<priority value="info" />
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+	
+</log4j:configuration>
